@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern E-Commerce Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#4f46e5", // Indigo
+              secondary: "#f3f4f6", // Light Gray
+              accent: "#4338ca", // Deep Indigo
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-secondary font-sans">
+    <!-- Navbar -->
+    <nav class="bg-primary text-white py-4 shadow-lg">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <a href="#" class="text-2xl font-bold">E-Commerce</a>
+        <ul class="flex space-x-6">
+          <li><a href="#products" class="hover:text-accent">Products</a></li>
+          <li><a href="#contact" class="hover:text-accent">Contact</a></li>
+          <li><a href="#feedback" class="hover:text-accent">Feedback</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section with Image Slider -->
+    <header class="relative w-full overflow-hidden">
+      <div class="slider flex transition-transform duration-700" id="slider">
+        <img
+          src="https://img.lazcdn.com/us/domino/04cf4c50-cc87-4b15-a090-179896f2ff9c_PK-1976-688.jpg_2200x2200q80.jpg"
+          class="w-full"
+          alt="Hero 1"
+        />
+        <img
+          src="https://img.lazcdn.com/us/domino/44959b98-1e8b-4b49-8fa3-87cfd4c0ef65_PK-1976-688.jpg_2200x2200q80.jpg"
+          class="w-full"
+          alt="Hero 2"
+        />
+        <img
+          src="https://img.lazcdn.com/us/domino/8c2b91d6-1e62-4d48-a9af-9aae481b8a97_PK-1976-688.jpg_2200x2200q80.jpg"
+          class="w-full"
+          alt="Hero 3"
+        />
+      </div>
+      <div
+        class="absolute inset-0 bg-black-light bg-opacity-30 flex flex-col justify-center items-center text-center text-white"
+      >
+        <h1 class="text-5xl font-bold mb-4">Find Your Next Favorite Product</h1>
+        <a
+          href="#products"
+          class="bg-accent text-white px-6 py-3 rounded-lg shadow-lg hover:bg-indigo-700"
+          >Shop Now</a
+        >
+      </div>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-primary mb-12">
+          Our Products
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Product Card -->
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="https://img.drz.lazcdn.com/static/pk/p/7528aef82be411f7eb921b86a7aaedd4.jpg_200x200q75.jpg_.webp"
+              alt="Product 1"
+              class="w-full rounded-t-lg"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-primary">Laptop</h3>
+              <p class="text-gray-600 mt-2">Price: PKR 60,000</p>
+              <button
+                class="mt-4 w-full bg-accent text-white py-2 rounded hover:bg-indigo-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="https://img.drz.lazcdn.com/static/pk/p/7528aef82be411f7eb921b86a7aaedd4.jpg_200x200q75.jpg_.webp"
+              alt="Product 1"
+              class="w-full rounded-t-lg"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-primary">Laptop</h3>
+              <p class="text-gray-600 mt-2">Price: PKR 60,000</p>
+              <button
+                class="mt-4 w-full bg-accent text-white py-2 rounded hover:bg-indigo-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="https://img.drz.lazcdn.com/static/pk/p/1c45fae15ad14a3ff984054624181eaf.jpg_200x200q75.jpg_.webp"
+              alt="Product 1"
+              class="w-full rounded-t-lg"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-primary">Laptop</h3>
+              <p class="text-gray-600 mt-2">Price: PKR 50,000</p>
+              <button
+                class="mt-4 w-full bg-accent text-white py-2 rounded hover:bg-indigo-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="https://img.drz.lazcdn.com/g/kf/S3c63d76e7b9f4ddfa30fd07b4084a4dcV.jpg_200x200q75.jpg_.webp"
+              alt="Product 1"
+              class="w-full rounded-t-lg"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-primary">Keyboard</h3>
+              <p class="text-gray-600 mt-2">Price: PKR 5,000</p>
+              <button
+                class="mt-4 w-full bg-accent text-white py-2 rounded hover:bg-indigo-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <!-- Repeat for other products -->
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="https://img.drz.lazcdn.com/static/pk/p/1dec31225824b5578ea115a4082dfe1e.jpg_200x200q75.jpg_.webp"
+              alt="Product 2"
+              class="w-full rounded-t-lg"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-primary">Smartphone</h3>
+              <p class="text-gray-600 mt-2">Price: PKR 30,000</p>
+              <button
+                class="mt-4 w-full bg-accent text-white py-2 rounded hover:bg-indigo-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray-200 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+          >
+            <img
+              src="https://img.drz.lazcdn.com/static/pk/p/48e3655975103baaf550aa7716f307aa.jpg_200x200q75.jpg_.webp"
+              alt="Product 3"
+              class="w-full rounded-t-lg"
+            />
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-primary">Headphones</h3>
+              <p class="text-gray-600 mt-2">Price: PKR 20,000</p>
+              <button
+                class="mt-4 w-full bg-accent text-white py-2 rounded hover:bg-indigo-700"
+              >
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section
+      id="contact"
+      class="py-16 bg-gradient-to-br from-gray-50 to-gray-200"
+    >
+      <div class="container mx-auto px-6">
+        <h2 class="text-5xl font-bold text-center text-primary mb-8">
+          Contact Us
+        </h2>
+        <p class="text-center text-gray-600 text-lg mb-12">
+          Have any questions? We'd love to hear from you!
+        </p>
+        <div
+          class="max-w-4xl mx-auto bg-white p-10 rounded-xl shadow-lg border border-gray-300"
+        >
+          <form action="#" method="POST" class="space-y-6">
+            <!-- Name Field -->
+            <div>
+              <label for="name" class="block text-gray-700 font-semibold mb-2">
+                Your Name <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                class="w-full p-4 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition-all duration-200 ease-in-out"
+                required
+              />
+            </div>
+
+            <!-- Email Field -->
+            <div>
+              <label for="email" class="block text-gray-700 font-semibold mb-2">
+                Your Email <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                class="w-full p-4 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition-all duration-200 ease-in-out"
+                required
+              />
+            </div>
+
+            <!-- Message Field -->
+            <div>
+              <label
+                for="message"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Your Message <span class="text-red-500">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message here..."
+                rows="5"
+                class="w-full p-4 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary resize-none transition-all duration-200 ease-in-out"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full py-3 px-6 bg-primary text-white font-semibold text-lg rounded-lg shadow-md hover:bg-indigo-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition-all duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section
+      id="feedback"
+      class="py-16 bg-gradient-to-br from-gray-50 to-gray-100"
+    >
+      <div class="container mx-auto px-6">
+        <h2 class="text-5xl font-bold text-center text-primary mb-8">
+          We Value Your Feedback
+        </h2>
+        <p class="text-center text-gray-600 text-lg mb-12">
+          Your feedback helps us improve. Let us know what you think!
+        </p>
+        <div
+          class="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-lg border border-gray-200"
+        >
+          <form action="#" method="POST" class="space-y-6">
+            <!-- Feedback Field -->
+            <div>
+              <label
+                for="feedback"
+                class="block text-gray-700 font-semibold mb-2"
+              >
+                Share Your Feedback <span class="text-red-500">*</span>
+              </label>
+              <textarea
+                id="feedback"
+                name="feedback"
+                rows="5"
+                placeholder="Write your feedback here..."
+                class="w-full p-4 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition-all duration-200 ease-in-out"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Rating Field -->
+            <div>
+              <label class="block text-gray-700 font-semibold mb-2">
+                Rate Us
+              </label>
+              <div class="flex items-center space-x-2">
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rate1"
+                  value="1"
+                  class="hidden peer"
+                  required
+                />
+                <label
+                  for="rate1"
+                  class="cursor-pointer text-2xl peer-checked:text-yellow-500"
+                >
+                  ★
+                </label>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rate2"
+                  value="2"
+                  class="hidden peer"
+                  required
+                />
+                <label
+                  for="rate2"
+                  class="cursor-pointer text-2xl peer-checked:text-yellow-500"
+                >
+                  ★
+                </label>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rate3"
+                  value="3"
+                  class="hidden peer"
+                  required
+                />
+                <label
+                  for="rate3"
+                  class="cursor-pointer text-2xl peer-checked:text-yellow-500"
+                >
+                  ★
+                </label>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rate4"
+                  value="4"
+                  class="hidden peer"
+                  required
+                />
+                <label
+                  for="rate4"
+                  class="cursor-pointer text-2xl peer-checked:text-yellow-500"
+                >
+                  ★
+                </label>
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rate5"
+                  value="5"
+                  class="hidden peer"
+                  required
+                />
+                <label
+                  for="rate5"
+                  class="cursor-pointer text-2xl peer-checked:text-yellow-500"
+                >
+                  ★
+                </label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+              type="submit"
+              class="w-full py-3 px-6 bg-primary text-white font-semibold text-lg rounded-lg shadow-md hover:bg-indigo-600 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2 transition-all duration-300"
+            >
+              Submit Feedback
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-6 text-center">
+      <p>&copy; 2024 Modern E-Commerce. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Slider -->
+    <script>
+      const slider = document.querySelector("#slider");
+      let index = 0;
+
+      setInterval(() => {
+        index = (index + 1) % 3; // Assuming 3 images in the slider
+        slider.style.transform = `translateX(-${index * 100}%)`;
+      }, 3000); // Change image every 3 seconds
+    </script>
+  </body>
+</html>
