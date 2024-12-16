@@ -1,3 +1,5 @@
+import streamlit as st
+
 # Inventory with product details
 inventory = {
     1: {"id": 1, "name": "Laptop", "price": 60000, "stock": 5},
@@ -10,14 +12,16 @@ inventory = {
 cart = {"items": [], "total": 0}
 
 
+# Display available products
 def display_products():
-    print("Available Products:")
+    st.subheader("Available Products")
     for product in inventory.values():
-        print(
-            f"ID: {product['id']}, Name: {product['name']}, Price: {product['price']}, Stock: {product['stock']}"
+        st.write(
+            f"**{product['name']}** - Price: {product['price']} - Stock: {product['stock']}"
         )
 
 
+# Add a product to the cart
 def add_to_cart(product_id):
     product = inventory.get(product_id)
     if product and product["stock"] > 0:
@@ -39,52 +43,51 @@ def add_to_cart(product_id):
                 }
             )
             cart["total"] += product["price"]
-        print("Product added to cart successfully!")
+        st.success(f"{product['name']} added to the cart successfully!")
     else:
-        print("Product is out of stock or invalid ID.")
+        st.error("Product is out of stock or invalid ID.")
 
 
+# View cart items
 def view_cart():
-    print("Cart Items:")
+    st.subheader("Cart Items")
     if cart["items"]:
         for item in cart["items"]:
-            print(
-                f"Name: {item['name']}, Price: {item['price']}, Quantity: {item['quantity']}, Subtotal: {item['subtotal']}"
+            st.write(
+                f"**{item['name']}** - Price: {item['price']} - Quantity: {item['quantity']} - Subtotal: {item['subtotal']}"
             )
-        print(f"Total: {cart['total']}")
+        st.write(f"**Total: {cart['total']}**")
     else:
-        print("Cart is empty.")
+        st.warning("Your cart is empty.")
 
 
+# Submit feedback
 def submit_feedback():
-    feedback = input("Enter your feedback: ")
-    print(f"Feedback received: {feedback}")
-    print("Feedback submitted successfully!")
+    feedback = st.text_area("Enter your feedback:")
+    if st.button("Submit Feedback"):
+        st.success("Feedback submitted successfully!")
+        st.write(f"**Your Feedback:** {feedback}")
 
 
+# Main function
 def main():
-    while True:
-        print("\n1. View Products")
-        print("2. Add to Cart")
-        print("3. View Cart")
-        print("4. Submit Feedback")
-        print("5. Exit")
-        choice = input("Enter your choice: ")
+    st.title("E-Commerce Store")
+    menu = ["View Products", "Add to Cart", "View Cart", "Submit Feedback"]
+    choice = st.sidebar.selectbox("Menu", menu)
 
-        if choice == "1":
-            display_products()
-        elif choice == "2":
-            product_id = int(input("Enter the product ID to add to cart: "))
+    if choice == "View Products":
+        display_products()
+    elif choice == "Add to Cart":
+        display_products()
+        product_id = st.number_input(
+            "Enter the product ID to add to cart:", min_value=1, step=1
+        )
+        if st.button("Add to Cart"):
             add_to_cart(product_id)
-        elif choice == "3":
-            view_cart()
-        elif choice == "4":
-            submit_feedback()
-        elif choice == "5":
-            print("Exiting the program. Thank you!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+    elif choice == "View Cart":
+        view_cart()
+    elif choice == "Submit Feedback":
+        submit_feedback()
 
 
 if __name__ == "__main__":
